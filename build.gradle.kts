@@ -16,6 +16,12 @@ repositories {
     mavenCentral()
 }
 
+dependencyManagement {
+    imports {
+        mavenBom("org.keycloak.bom:keycloak-adapter-bom:16.1.1")
+    }
+}
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
@@ -24,6 +30,9 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("mysql:mysql-connector-java")
+    implementation("org.springframework.boot:spring-boot-starter-security:2.6.3")
+    implementation("org.keycloak:keycloak-spring-boot-starter")
+    implementation("org.keycloak:keycloak-spring-security-adapter")
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
