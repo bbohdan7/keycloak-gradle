@@ -18,4 +18,5 @@ class UserController {
 
         return "index"
     }
+
 }
